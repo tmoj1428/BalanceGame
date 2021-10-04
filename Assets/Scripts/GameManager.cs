@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         if (!gameHasEnded)
         {
             gameHasEnded = true;
+            FindObjectOfType<PauseGame>().pauseGame();
             RestartUI.SetActive(true);
         }
     }
