@@ -41,9 +41,16 @@ public class timer : MonoBehaviour
 
         if (timerIsRunning && GameEnd== false)
         {
-           
             timePassed += Time.deltaTime;
             this.DisplayTime(timePassed);
+            if (Mathf.FloorToInt(timePassed % 60) > 5)
+            {
+                int sec = Mathf.FloorToInt(timePassed % 60);
+                if (sec % 5 == 0)
+                {
+                    FindObjectOfType<GenerateBlocks>().spawnBlocks(sec);
+                }
+            }
         }
     }
 
@@ -51,7 +58,10 @@ public class timer : MonoBehaviour
     {
         if (timerShouldStop)
         {
-            PlayerPrefs.SetFloat("record",timePassed);
+            if (PlayerPrefs.GetFloat("record") <= timePassed)
+            {
+                PlayerPrefs.SetFloat("record", timePassed);
+            }
             GameEnd = true;
             timerIsRunning = false;
         }
