@@ -736,3 +736,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328695fc5ab023b4f9b4606127a0e77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerperCharacter: 0.09
+  textToWrite: Balance

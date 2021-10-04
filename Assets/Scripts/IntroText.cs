@@ -8,8 +8,8 @@ public class IntroText : MonoBehaviour
     private Text introText;
     private float timer;
     private int characterIndex;
-    private float timerperCharacter = .06f;
-    private string textToWrite;
+    public float timerperCharacter = .09f;
+    public string textToWrite = "Balance";
 
     private void Awake()
     {
