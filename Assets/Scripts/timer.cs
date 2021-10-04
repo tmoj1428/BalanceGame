@@ -8,6 +8,8 @@ public class timer : MonoBehaviour
     public float timePassed = 0;
     public Text timeText;
     public bool timerIsRunning = false;
+    public PauseGame pause;
+
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,15 @@ public class timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pause.GameIsPaused)
+        {
+            timerIsRunning = false;
+        }
+        else
+        {
+            timerIsRunning = true;
+        }
+
         if (timerIsRunning)
         {
            

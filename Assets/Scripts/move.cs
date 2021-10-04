@@ -6,7 +6,7 @@ public class move : MonoBehaviour
 {
     public float speedFactor = .1f;
     public timer time;
-    //public GameObject time;
+    public PauseGame pause;
     private Vector3 moveVector;
     void Start()
     {
@@ -18,15 +18,19 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (!pause.GameIsPaused)
         {
-            transform.position += moveVector;
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += moveVector;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= moveVector;
+
+            }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= moveVector;
-            
-        }
+        
         if (transform.position.y < -3.0f) {
             time.StartStopTimer(true);      
         }
