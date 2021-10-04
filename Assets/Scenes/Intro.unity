@@ -560,8 +560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 50, y: 137.3}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 0.000030518, y: 132.9}
+  m_SizeDelta: {x: 539.5666, y: 99.02646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425734506
 MonoBehaviour:
@@ -595,7 +595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Balance
+  m_Text: The floor is lava
 --- !u!222 &1425734507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -737,4 +737,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerperCharacter: 0.09
-  textToWrite: Balance
+  textToWrite: The floor is lava

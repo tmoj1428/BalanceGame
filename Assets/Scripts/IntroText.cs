@@ -9,7 +9,7 @@ public class IntroText : MonoBehaviour
     private float timer;
     private int characterIndex;
     public float timerperCharacter = .09f;
-    public string textToWrite = "Balance";
+    public string textToWrite;
 
     private void Awake()
     {
@@ -17,7 +17,6 @@ public class IntroText : MonoBehaviour
     }
     void Start()
     {
-        textToWrite = "Balance";
         characterIndex = 0;
     }
 
