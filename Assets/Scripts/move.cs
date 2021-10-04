@@ -32,7 +32,8 @@ public class move : MonoBehaviour
         }
         
         if (transform.position.y < -3.0f) {
-            time.StartStopTimer(true);      
+            FindObjectOfType<GameManager>().EndGame();
+            time.StartStopTimer(true);
         }
         
     }
