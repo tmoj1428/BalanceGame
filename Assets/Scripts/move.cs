@@ -5,10 +5,14 @@ using UnityEngine;
 public class move : MonoBehaviour
 {
     public float speedFactor = .1f;
+    public timer time;
+    //public GameObject time;
     private Vector3 moveVector;
     void Start()
     {
         moveVector = new Vector3(1 * speedFactor, 0, 0);
+        //time = GetComponent<timer>();
+        Debug.Log(time);
     }
 
     // Update is called once per frame
@@ -21,6 +25,11 @@ public class move : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= moveVector;
+            
         }
+        if (transform.position.y < -3.0f) {
+            time.StartStopTimer(true);      
+        }
+        
     }
 }
