@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 95933829}
   - component: {fileID: 95933827}
   - component: {fileID: 95933828}
+  - component: {fileID: 95933831}
   m_Layer: 0
   m_Name: rectangle
   m_TagString: Untagged
@@ -262,6 +263,19 @@ Transform:
   m_Father: {fileID: 2109557157}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95933831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95933826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4213845293274f4a8fe0fa424c66b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 1597261022}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +742,7 @@ MonoBehaviour:
   timePassed: 0
   timeText: {fileID: 1193914570}
   timerIsRunning: 0
+  pause: {fileID: 1597261022}
 --- !u!4 &1118525827
 Transform:
   m_ObjectHideFlags: 0
@@ -821,6 +836,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193914568}
   m_CullTransparentMesh: 0
+--- !u!1 &1597261021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597261023}
+  - component: {fileID: 1597261022}
+  m_Layer: 0
+  m_Name: PauseGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1597261022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597261021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ed30a8e89224243a66c8c92ae099e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameIsPaused: 0
+--- !u!4 &1597261023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597261021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.285754, y: -0.85602957, z: -9.547802}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748117048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedFactor: 0.02
   time: {fileID: 1118525826}
+  pause: {fileID: 1597261022}
 --- !u!1 &2079338188
 GameObject:
   m_ObjectHideFlags: 0

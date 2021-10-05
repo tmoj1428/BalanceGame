@@ -8,6 +8,7 @@ public class timer : MonoBehaviour
     public float timePassed = 0;
     public Text timeText;
     public bool timerIsRunning = false;
+    public bool GameEnd = false;
     public PauseGame pause;
 
     
@@ -29,7 +30,7 @@ public class timer : MonoBehaviour
             timerIsRunning = true;
         }
 
-        if (timerIsRunning)
+        if (timerIsRunning && GameEnd== false)
         {
            
             timePassed += Time.deltaTime;
@@ -41,11 +42,12 @@ public class timer : MonoBehaviour
     {
         if (timerShouldStop)
         {
-
+            GameEnd = true;
             timerIsRunning = false;
         }
         else
         {
+            GameEnd = false;
             timerIsRunning = true;
         }
     }
