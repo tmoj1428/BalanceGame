@@ -7,6 +7,7 @@ public class timer : MonoBehaviour
 {
     public float timePassed = 0;
     public Text timeText;
+    public Text recordText;
     public bool timerIsRunning = false;
     public bool GameEnd = false;
     public PauseGame pause;
@@ -16,6 +17,14 @@ public class timer : MonoBehaviour
     void Start()
     {
         timerIsRunning = true;
+        Debug.Log(PlayerPrefs.GetFloat("record"));
+        float record = PlayerPrefs.GetFloat("record");
+
+        float minutesrecord = Mathf.FloorToInt(record / 60);
+        float secondsrecord = Mathf.FloorToInt(record % 60);
+        float milliSecondsrecord = (record % 1) * 1000;
+
+        recordText.text = "HighScore: " + string.Format("{0:00}:{1:00}:{2:000}", minutesrecord, secondsrecord, milliSecondsrecord);
     }
 
     // Update is called once per frame
@@ -42,6 +51,7 @@ public class timer : MonoBehaviour
     {
         if (timerShouldStop)
         {
+            PlayerPrefs.SetFloat("record",timePassed);
             GameEnd = true;
             timerIsRunning = false;
         }

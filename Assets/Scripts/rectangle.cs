@@ -5,7 +5,8 @@ using UnityEngine;
 public class rectangle : MonoBehaviour
 {
     public PauseGame pause;
-    //public Rigidbody2D rectangleBody;
+    public Rigidbody2D rectangleBody;
+    public timer time;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,21 @@ public class rectangle : MonoBehaviour
     {
         if (pause.GameIsPaused)
         {
-            this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+           rectangleBody.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         else
         {
-            this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            rectangleBody.constraints = RigidbodyConstraints2D.None;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("triangle"))
+        {
+            FindObjectOfType<GameManager>().EndGame();
+            time.StartStopTimer(true);
+        }
+        
     }
 }

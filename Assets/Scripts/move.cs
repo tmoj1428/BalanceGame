@@ -5,14 +5,13 @@ using UnityEngine;
 public class move : MonoBehaviour
 {
     public float speedFactor = .1f;
-    public timer time;
     public PauseGame pause;
+    public Rigidbody2D circleBody;
     private Vector3 moveVector;
     void Start()
     {
         moveVector = new Vector3(1 * speedFactor, 0, 0);
-        //time = GetComponent<timer>();
-        Debug.Log(time);
+        
     }
 
     // Update is called once per frame
@@ -20,6 +19,7 @@ public class move : MonoBehaviour
     {
         if (!pause.GameIsPaused)
         {
+            circleBody.constraints = RigidbodyConstraints2D.None;
             if (Input.GetKey(KeyCode.D))
             {
                 transform.position += moveVector;
@@ -30,11 +30,13 @@ public class move : MonoBehaviour
 
             }
         }
-        
-        if (transform.position.y < -3.0f) {
-            FindObjectOfType<GameManager>().EndGame();
-            time.StartStopTimer(true);
+        else
+        {
+            circleBody.constraints = RigidbodyConstraints2D.None;
+            //circleBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+        
+        
         
     }
 }
